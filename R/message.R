@@ -17,7 +17,7 @@ nums     <- unlist(lapply(num_ids, Sys.getenv))
 cat(length(nums), "phone numbers found.\n")
 
 # read Keanu factoids
-df <- read.delim(here::here("R/facts.tsv"))
+df <- read.csv(here::here("R/facts.csv"))
 
 # counter
 i <- read.csv(here::here("csv/counter.csv"))$counter
@@ -32,7 +32,7 @@ for(j in seq_along(nums)){
   cat("Preparing to send row number", i, "to phone number", j, "...")
   tw_send_message(from = tw_phone_number, 
                   to   = nums[j],
-                  body = paste("\U0001f4d6", df$factoid[i]))
+                  body = df$factoid[i])
   cat(" sent.\n")
 }
 
