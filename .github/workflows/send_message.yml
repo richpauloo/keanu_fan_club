@@ -2,7 +2,7 @@ name: Send Text Message Scheduled
 
 on:
   schedule:
-    - cron:  '40 * * * *'
+    - cron:  '0 * * * *'
 jobs:
   data_refresh:
     name: send a message
