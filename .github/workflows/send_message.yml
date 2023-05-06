@@ -1,8 +1,8 @@
 name: Send Text Message Scheduled
 
-on:
-  schedule:
-    - cron:  '0 * * * *'
+#on:
+#  schedule:
+#    - cron:  '0 * * * *'
 jobs:
   data_refresh:
     name: send a message
